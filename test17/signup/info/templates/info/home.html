@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    
+    <style>
+        body {
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .button-container {
+            text-align: center;
+        }
+        .btn {
+            /* Common styles for both buttons */
+            display: block;
+            width: 200px;
+            padding: 10px;
+            font-size: 16px;
+            margin: 0 auto 15px; /* Center the buttons horizontally */
+            text-align: center;
+            text-decoration: none; /* Remove default underline on anchor */
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            border: none;
+        }
+
+        .btn-signup {
+            /* Styles for Signup button */
+            background-color: #4CAF50; /* Green color */
+        }
+
+        .btn-signup:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+
+        .btn-login {
+            /* Styles for Login button */
+            background-color: #3498db; /* Blue color */
+        }
+
+        .btn-login:hover {
+            background-color: #2980b9; /* Darker blue on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="button-container">
+        <a href="{% url 'addinfo' %}" class="btn btn-signup">Signup</a>
+        <a href="{% url 'login' %}" class="btn btn-login">Login</a>
+    </div>
+</body>
+</html>

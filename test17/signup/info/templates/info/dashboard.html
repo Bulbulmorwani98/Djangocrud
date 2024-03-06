@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Data Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: flex-start; /* Updated to move container to the top */
+            justify-content: center;
+            min-height: 100vh; /* Ensures the container takes full viewport height */
+        }
+
+        .user-container {
+            text-align: center;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            max-width: 400px;
+            width: 100%;
+            margin: auto;
+        }
+
+        h2 {
+            color: #007bff;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .user-info p {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+
+        .no-data {
+            color: #dc3545;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="user-container">
+        <h2>User Data</h2>
+        {% if user %}
+            <div class="user-info">
+                <p>Name: {{ form.name }}</p>
+                <p>Email: {{ form.email }}</p>
+                <p>Password: {{ form.password }}</p>
+                <p>Age: {{ form.age }}</p>
+            </div>
+        {% else %}
+            <p class="no-data">No user data available.</p>
+        {% endif %}
+
+        <div>
+            <a href="{% url 'delete' form.id %}" class="btn btn-outline-danger">Delete</a>
+            <a href="{% url 'update' form.id %}" class="btn btn-outline-warning">Update</a>
+        </div>
+    </div>
+
+    
+</body>
+</html>
